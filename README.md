@@ -3,3 +3,6 @@
 
 ## 마지막 과제(최초기한: 12/5 일요일까지)
 #### 참고노션 : https://ceos-14th-backend-study.notion.site/1901c0c01bc843b98de7f5a0c9d811fb
+
+# 자동배포
+test
