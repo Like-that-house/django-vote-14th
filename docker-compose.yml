@@ -3,7 +3,7 @@ services:
 
   db:
     container_name: db
-    image: mysql:5.7
+    image: mariadb:latest
     restart: always
     environment:
       MYSQL_ROOT_HOST: '%'
@@ -28,7 +28,7 @@ services:
       DATABASE_PASSWORD: mysql
       DATABASE_PORT: 3306
       DATABASE_HOST: db
-      DJANGO_SETTINGS_MODULE: django-rest-framework-14th.settings.dev
+      DJANGO_SETTINGS_MODULE: like-that-house-vote.settings.dev
     restart: always
     ports:
       - "8000:8000"
