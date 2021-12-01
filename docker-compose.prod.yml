@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.prod
-    command: gunicorn like-that-house-vote.wsgi:application --bind 0.0.0.0:8001
+    command: gunicorn like-that-house-vote.wsgi:application --bind 0.0.0.0:8000
     environment:
       DJANGO_SETTINGS_MODULE: like-that-house-vote.settings.prod
     env_file:
@@ -15,7 +15,7 @@ services:
       - static:/home/app/web/static
       - media:/home/app/web/media
     expose:
-      - 8001
+      - 8000
     entrypoint:
       - sh
       - config/docker/entrypoint.prod.sh
@@ -27,7 +27,7 @@ services:
       - static:/home/app/web/static
       - media:/home/app/web/media
     ports:
-      - "81:80"
+      - "80:80"
     depends_on:
       - web
 
