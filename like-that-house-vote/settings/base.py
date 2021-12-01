@@ -76,7 +76,7 @@ JWT_AUTH = {
 
 AUTHENTICATION_BACKENDS = (
     # 'django.contrib.auth.backends.ModelBackend',
-    'votes.serializers.LoginBackend',
+    'api.serializers.LoginBackend',
 )
 
 ACCOUNT_EMAIL_REQUIRED = True

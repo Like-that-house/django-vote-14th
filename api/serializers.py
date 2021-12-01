@@ -76,7 +76,7 @@ class CandidateSerializer(serializers.ModelSerializer):
     voters = UserSerializer(many=True, read_only=True)
     class Meta:
         model = Candidate
-        fields = ['name', 'votes', ]
+        fields = ['name', 'votes', 'voters']
 
 
 
