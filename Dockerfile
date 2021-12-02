@@ -11,11 +11,7 @@ RUN apk add —no-cache \
         libressl-dev \
         musl-dev \
         libffi-dev && \
-    pip install —no-cache-dir cryptography==2.1.4 && \
-    apk del \
-        libressl-dev \
-        musl-dev \
-        libffi-dev
+    pip install —no-cache-dir cryptography==2.1.4
 
 # By copying over requirements first, we make sure that Docker will cache
 # our installed requirements rather than reinstall them on every build
