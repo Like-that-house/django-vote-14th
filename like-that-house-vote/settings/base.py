@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'allauth',
     'allauth.account',
+    'corsheaders',
 ]
 
 SITE_ID = 1
@@ -74,6 +75,8 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=28), # jwt 토큰 갱신 유효기간
 }
 
+CORS_ORIGIN_ALLOW_ALL = True # 모든 호스트 허용
+
 AUTHENTICATION_BACKENDS = (
     # 'django.contrib.auth.backends.ModelBackend',
     'api.serializers.LoginBackend',
@@ -86,6 +89,7 @@ REST_USE_JWT = True
 ACCOUNT_LOGOUT_ON_GET = True
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
