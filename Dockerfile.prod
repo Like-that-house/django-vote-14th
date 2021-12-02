@@ -18,7 +18,7 @@ RUN apk add —no-cache \
         libressl-dev \
         musl-dev \
         libffi-dev \&& \
-    pip install —no-cache-dir cryptography==2.1.4 && pip install -no-cahce-dir cffi
+    pip install —no-cache-dir cryptography==2.1.4 && pip install -no-cache-dir cffi
 
 # install dependencies
 COPY ./requirements.txt .
