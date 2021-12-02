@@ -10,8 +10,8 @@ RUN apk update && apk add python3 python3-dev mariadb-dev build-base && pip3 ins
 RUN apk add —no-cache \
         libressl-dev \
         musl-dev \
-        libffi-dev && \
-    pip install —no-cache-dir cryptography==2.1.4
+        libffi-dev \&& \
+    pip install —no-cache-dir cryptography==2.1.4 && pip install -no-cahce-dir cffi
 
 # By copying over requirements first, we make sure that Docker will cache
 # our installed requirements rather than reinstall them on every build
