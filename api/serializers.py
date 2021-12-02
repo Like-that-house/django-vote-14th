@@ -22,8 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create(
             email=validated_data['email'],
             userid=validated_data['userid'],
+            password=validated_data['password'],
         )
-        user.set_password(validated_data['password'])
+        #user.set_password(validated_data['password'])
         user.save()
         return user
 
@@ -32,7 +33,8 @@ class LoginBackend(ModelBackend): # 준환님 readme.md 참고. 이거 안하면
     def authenticate(self, request, userid=None, password=None, **kwargs):
         try:
             user = User.objects.get(userid=userid)
-            if user.check_password(password):
+            #if user.check_password(password):
+            if user.password == password:
                 return user
             return None
 
