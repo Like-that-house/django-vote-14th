@@ -1,4 +1,6 @@
 from .base import *  # noqa
+import pymysql
+pymysql.install_as_MySQLdb()
 
 DEBUG = False
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
